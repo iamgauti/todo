@@ -1,0 +1,230 @@
+Started GET "/" for ::1 at 2020-05-12 19:35:12 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 744ms (Views: 53.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 19:40:47 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 474ms (Views: 50.4ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTodos (20200512141921)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "todos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200512141921"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-12 14:19:51.021724"], ["updated_at", "2020-05-12 14:19:51.021724"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/todos" for ::1 at 2020-05-12 19:50:08 +0530
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (3.0ms)
+Started GET "/todos" for ::1 at 2020-05-12 19:50:12 +0530
+Completed 500 Internal Server Error in 4507ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "TodoFlashy" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12:     <%= javascript_include_tag "application" %>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__300502912_55579332'
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 1703ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "TodoFlashy" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12:     <%= javascript_include_tag "application" %>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__300502912_84604788'
+Started GET "/todos" for ::1 at 2020-05-12 19:53:32 +0530
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 5083ms (Views: 5040.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 19:53:55 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (48.0ms)
+  Rendered todos/new.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 260ms (Views: 226.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 19:54:23 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (3.0ms)
+  Rendered todos/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 344ms (Views: 320.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 19:55:40 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (2.0ms)
+  Rendered todos/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 215ms (Views: 191.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 19:58:23 +0530
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (16.0ms)
+  Rendered todos/new.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 567ms (Views: 524.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 19:59:40 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (5.0ms)
+  Rendered todos/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 1018ms (Views: 990.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/todos" for ::1 at 2020-05-12 19:59:55 +0530
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kVgZ3sjE25mUyZumPV6eYYCgobEcH3XPyL8IQk4PEeWkBtarjiOVD18YeKM29r9vHZyoX0Pu9anqTr2R4jj3Qg==", "todo"=>{"title"=>"gautam", "description"=>"agrawal"}, "commit"=>"Create Todo"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "gautam"], ["description", "agrawal"], ["created_at", "2020-05-12 14:29:55.841045"], ["updated_at", "2020-05-12 14:29:55.841045"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todos/1
+Completed 302 Found in 49ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/todos/1" for ::1 at 2020-05-12 19:59:55 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todos/show.html.erb within layouts/application
+  Rendered todos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 302ms (Views: 254.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:00:02 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 243ms (Views: 221.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:01:42 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 289ms (Views: 266.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 20:01:45 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (3.0ms)
+  Rendered todos/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 267ms (Views: 244.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:02:10 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 268ms (Views: 236.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 20:02:20 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (3.0ms)
+  Rendered todos/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 258ms (Views: 236.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:02:22 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 242ms (Views: 221.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:02:53 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 276ms (Views: 248.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:02:56 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 257ms (Views: 236.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:02:57 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 269ms (Views: 248.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/new" for ::1 at 2020-05-12 20:02:59 +0530
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (3.0ms)
+  Rendered todos/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 251ms (Views: 230.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2020-05-12 20:03:01 +0530
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 243ms (Views: 220.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
